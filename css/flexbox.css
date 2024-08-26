@@ -11,26 +11,39 @@
 .videos__container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     gap: 20px;
     z-index: 1;
     padding: 153px 25px 15px 25px;
 }
 
-.videos__item {
+/* .videos__item {
     flex-grow: 1;
     height: 303px;
     width: 303px;
+} */
+.videos__item {
+    width: 48%; /* Define a largura para cada vídeo (2 vídeos por linha) */
+    margin-bottom: 20px; /* Espaçamento inferior entre as divs de vídeo */
+    box-sizing: border-box; /* Inclui o padding e border na largura total */
+    overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse a caixa */
 }
 
 /* grid vídeos */
 
-.descricao-video {
+/* .descricao-video {
     margin-top: 1rem;
     display: grid;
     text-align: start;
     column-gap: 1rem;
     row-gap: 5px;
-    grid-template-columns: auto 1fr;
+} */
+
+.descricao-video {
+    width: 100%; /* Garante que o conteúdo ocupe toda a largura disponível */
+    overflow: hidden; /* Esconde o texto que ultrapasse a caixa */
+    text-overflow: ellipsis; /* Adiciona '...' ao final do texto cortado */
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
 }
 
 .descricao-video img {
