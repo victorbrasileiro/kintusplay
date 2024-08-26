@@ -1,0 +1,141 @@
+*,
+*::before,
+*::after {
+    --branco: #F0F0F2;
+    --cinza: #C8CACF;
+    --preto: #08070D;
+    --rosa-claro: #F280BF;
+    --rosa-medio: #D94395;
+    --rosa-escuro: #BF045B;
+
+    --rosa-logo: #C93182;
+
+    --cinza-texto: #444444;
+    --cinza-claro: #ECECEC;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    background-color: var(--branco);
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    font-size: 14px;
+    color: --preto;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* ESTILOS DO HEADER */
+
+.cabecalho {
+    background-color: var(--cinza);
+    position: fixed;
+    top: 0;
+    height: 80px;
+    width: 100%;
+    padding: 0 25px;
+    z-index: 2;
+}
+
+.logo {
+    background-image: url(../img/cabecalho/Logo.png);
+    background-repeat: no-repeat;
+    padding: 25px 100px;
+    cursor: pointer;
+}
+
+.cabecalho__about {
+    background-image: url(../img/cabecalho/about.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 15px;
+    margin: 0 20px;
+}
+
+.cabecalho__videos {
+    background-image: url(../img/cabecalho/video_Call.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 15px;
+    margin: 0 20px;
+}
+
+.cabecalho__sair {
+    background-image: url(../img/cabecalho/logout-icon.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 15px;
+    margin: 0 20px;
+}
+
+/* ESTILOS DA SEÇÃO VÍDEOS */
+
+.videos__container {
+    color: black;
+}
+
+.mensagem {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.mensagem__imagem {
+    width: 30%;
+}
+
+.mensagem__titulo {
+    color: var(--azul-medio);
+    font-weight: bold;
+    font-size: 21px;
+}
+
+.pesquisar__input {
+    width: 260px;
+    height: 32px;
+    border: 1px solid var(--branco);
+    font-size: 16px;
+    padding: 3px 8px;
+    border: 1px solid var(--branco);
+    color: var(--preto);
+}
+
+.pesquisar__botao {
+    background-image: url(../img/cabecalho/search.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid var(--preto);
+    background-color: var(--preto);
+    border-left: none;
+    padding: 15px 15px;
+    cursor: pointer;
+}
+
+.acoes-video {
+    padding: 5px;
+}
+
+.botao {
+    margin: 5 10px;
+    padding: 5px 10px;
+    border-radius: 10%;
+    background-color: var(--preto);
+    color: var(--branco);
+    text-decoration: none;
+    justify-content: center;
+}
+
+@media(min-width: 834px) {
+
+    body {
+        height: 100vh;
+    }
+
+}
