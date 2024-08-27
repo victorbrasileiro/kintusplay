@@ -10,7 +10,7 @@ $pdo = new PDO("sqlite:$dbPath");
 // Se não for um inteiro válido ou estiver ausente, redireciona o usuário e encerra o script.
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 if ($id === false || $id === null) {
-    header('Location: /?sucesso=0');
+    header('Location: /?erro=0');
     exit(); 
 }   
 
@@ -18,13 +18,13 @@ if ($id === false || $id === null) {
 // Se a URL não for válida, redireciona o usuário e encerra o script.
 $url = filter_input(INPUT_POST, 'url', FILTER_VALIDATE_URL);
 if ($url === false) {
-    header('Location: /?sucesso=0'); 
+    header('Location: /?erro=0'); 
     exit(); 
 }
 
 $titulo = filter_input(INPUT_POST, 'titulo');
 if ($titulo === false) {
-    header('Location: /?sucesso=0'); 
+    header('Location: /?erro=0'); 
     exit(); 
 }
 
