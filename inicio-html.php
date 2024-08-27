@@ -11,29 +11,21 @@
     <link rel="stylesheet" href="../css/estilos-form.css">
     <link rel="stylesheet" href="../css/flexbox.css">
     <title>Kintus Videos</title>
-    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
 </head>
 
 <body>
 
-    <!-- Cabecalho -->
     <header>
 
         <nav class="cabecalho">
             <a class="logo" href="/"></a>
 
             <div class="cabecalho__icones">
-                <a href="./about.html" class="cabecalho__about"></a>
-                <a href="/novo-video" class="cabecalho__videos"></a>
-                <a href="../pages/login.html" class="cabecalho__sair"></a>
+                <a href="./pages/about.html" class="cabecalho__about"></a>
+                <a href="./novo-video" class="cabecalho__videos"></a>
+                <a href="./pages/login.html" class="cabecalho__sair"></a>
             </div>
         </nav>
 
     </header>
-
-
-    
-
-</body>
-
-</html>
