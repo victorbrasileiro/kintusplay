@@ -24,4 +24,6 @@ elseif ($_SERVER['PATH_INFO'] === '/novo-video') {
     }
 } elseif ($_SERVER['PATH_INFO'] === '/remover-video') {
     require_once 'remover-video.php';
+} else {
+    http_response_code(404);
 }
