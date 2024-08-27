@@ -21,16 +21,18 @@ if ($id !== false && $id !== null) {
         <div class="container__enviar-video">
             <form class="container__formulario"
                 method="post">
-                <h1 class="formulario__titulo">Envie um Vídeo</h1>
-                    <div class="formulario__campo">
-                        <label class="campo__etiqueta" for="url">Insira o link</label>
-                        <input name="url" 
-                            value="<?php echo $video['url']; ?>"
-                            class="campo__escrita-video" 
-                            required
-                            placeholder="Por exemplo: https://www.youtube.com/embed/FAY1K2aUg5g" 
-                            id='url' />
-                    </div>
+                <div class="formulario__titulo">
+                    <img src="/img/titulo-novo-video.png" alt="logo titulo enviar video">
+                </div>
+                <div class="formulario__campo">
+                    <label class="campo__etiqueta" for="url">Insira o link</label>
+                    <input name="url" 
+                           value="<?php echo $video['url']; ?>"
+                           class="campo__escrita-video" 
+                           required
+                           placeholder="Por exemplo: https://www.youtube.com/embed/FAY1K2aUg5g" 
+                           id='url' />
+                </div>
 
 
                     <div class="formulario__campo">
