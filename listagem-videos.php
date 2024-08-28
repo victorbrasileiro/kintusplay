@@ -35,22 +35,16 @@ $videoList = $pdo->query('SELECT * FROM videos;')->fetchAll(\PDO::FETCH_ASSOC);
                 <div class="descricao-video">
                     <div class="icon-video">
                         <img src="./img/logo.png" alt="logo canal">
+                    </div>
+                    <div class="title">
                         <h3><?php echo $video['title']; // Exibe o título do vídeo ?></h3>
                     </div>
-                    <div class="acoes-video">
-                        <!-- Botão para editar o vídeo, passando o ID do vídeo na URL para ser editado -->
-                        <a class="botao" 
-                            href="/editar-video?id=<?php echo $video['id']; ?>">
-                            Editar
-                        </a>
-                        <!-- Botão para excluir o vídeo, passando o ID do vídeo na URL para ser removido -->
-                        <a class="botao" 
-                            href="/remover-video?id=<?php echo $video['id']; ?>">
-                            Excluir
-                        </a>
+                    <div class="buttons">
+                        <a class="button button-edit" href="/editar-video?id=<?php echo $video['id']; ?>">Editar</a>
+                        <a class="button button-delete" href="/remover-video?id=<?php echo $video['id']; ?>">Excluir</a>
                     </div>
                 </div>
             </li>
         <?php endforeach; // Fim do loop foreach ?>
     </ul>
-<?php require_once 'fim-html.php'; 
+<?php require_once 'footer.php'; ?>

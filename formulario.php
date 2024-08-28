@@ -22,39 +22,39 @@ if ($id !== false && $id !== null) {
 
 ?>
 <?php require_once 'inicio-html.php'; ?>
-    <main class="container">
-        <div class="container__enviar-video">
-            <!-- Formulário para enviar ou editar um vídeo -->
-            <form class="container__formulario"
-                method="post">
-                <div class="formulario__titulo">
-                    <img src="/img/titulo-novo-video.png" alt="logo titulo enviar video">
-                </div>
-                <div class="formulario__campo">
-                    <label class="campo__etiqueta" for="url">Insira o link</label>
-                    <!-- Preenche o campo 'url' com o valor atual do vídeo se estiver disponível -->
-                    <input name="url" 
-                           value="<?php echo $video['url']; ?>"
-                           class="campo__escrita-video" 
-                           required
-                           placeholder="Por exemplo: https://www.youtube.com/embed/FAY1K2aUg5g" 
-                           id='url' />
-                </div>
+<main class="container">
+    <div class="container__enviar-video">
+        <!-- Formulário para enviar ou editar um vídeo -->
+        <form class="container__formulario"
+            method="post">
+            <div class="formulario__titulo">
+                <img src="/img/titulo-novo-video.png" alt="logo titulo enviar video">
+            </div>
+            <div class="formulario__campo">
+                <label class="campo__etiqueta" for="url">Insira o link</label>
+                <!-- Preenche o campo 'url' com o valor atual do vídeo se estiver disponível -->
+                <input name="url"
+                    value="<?php echo $video['url']; ?>"
+                    class="campo__escrita-video"
+                    required
+                    placeholder="Por exemplo: https://www.youtube.com/embed/FAY1K2aUg5g"
+                    id='url' />
+            </div>
 
 
-                    <div class="formulario__campo">
-                        <label class="campo__etiqueta" for="titulo">Titulo do vídeo</label>
-                        <!-- Preenche o campo 'title' com o valor atual do vídeo se estiver disponível -->
-                        <input name="titulo"
-                            value="<?php echo $video['title']; ?>" 
-                            class="campo__escrita-video" 
-                            required 
-                            placeholder="Neste campo, dê o nome do vídeo"
-                            id='titulo' />
-                    </div>
+            <div class="formulario__campo">
+                <label class="campo__etiqueta" for="titulo">Titulo do vídeo</label>
+                <!-- Preenche o campo 'title' com o valor atual do vídeo se estiver disponível -->
+                <input name="titulo"
+                    value="<?php echo $video['title']; ?>"
+                    class="campo__escrita-video"
+                    required
+                    placeholder="Neste campo, dê o nome do vídeo"
+                    id='titulo' />
+            </div>
 
-                    <input class="formulario__botao" type="submit" value="Enviar" />
-            </form>
-        </div>
-    </main> 
+            <input class="formulario__botao" type="submit" value="Enviar" />
+        </form>
+    </div>
+</main>
 <?php require_once 'fim-html.php'; ?>
