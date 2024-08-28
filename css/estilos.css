@@ -23,7 +23,7 @@ body {
     height: 100vh;
     overflow: auto;
     font-size: 14px;
-    color: --preto;
+    color: var(--preto);
     box-sizing: border-box;
     text-align: center;
 }
@@ -31,6 +31,10 @@ body {
 /* ESTILOS DO HEADER */
 
 .cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Alinha logo e ícones em cada extremidade */
     background-color: var(--cinza);
     position: fixed;
     top: 0;
@@ -45,6 +49,11 @@ body {
     background-repeat: no-repeat;
     padding: 25px 100px;
     cursor: pointer;
+}
+
+.cabecalho__icones {
+    margin-left: auto;
+    /* Adiciona margem automática para empurrar para o canto direito */
 }
 
 .cabecalho__about {
@@ -74,28 +83,81 @@ body {
     margin: 0 20px;
 }
 
+.cabecalho__toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--preto);
+    position: absolute;
+    right: 25px; /* Ajuste conforme necessário */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 /* ESTILOS DA SEÇÃO VÍDEOS */
 
 .videos__container {
-    color: black;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 153px 25px 15px 25px;
+    justify-content: space-between;
+    /* Ajuste o espaçamento entre os itens */
 }
 
-.mensagem {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+.videos__item {
+    flex: 1 1 calc(20% - 20px);
+    /* Ajuste o tamanho para 25% menos o gap */
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
-.mensagem__imagem {
-    width: 30%;
+.video {
+    width: 100%;
+    padding-top: 56.25%;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 5px;
 }
 
-.mensagem__titulo {
-    color: var(--azul-medio);
-    font-weight: bold;
-    font-size: 21px;
+.video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
 }
+
+.descricao-video {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.descricao-video h3 {
+    grid-area: 1 / 2 / 2 / 3;
+    margin-top: 12px;
+    font-weight: 700;
+    color: var(--cinza-texto);
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
+.descricao-video .acoes-video {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* FORMULÁRIOS E BOTÕES */
 
 .pesquisar__input {
     width: 260px;
@@ -103,7 +165,6 @@ body {
     border: 1px solid var(--branco);
     font-size: 16px;
     padding: 3px 8px;
-    border: 1px solid var(--branco);
     color: var(--preto);
 }
 
@@ -118,24 +179,178 @@ body {
     cursor: pointer;
 }
 
-.acoes-video {
-    padding: 5px;
-}
-
-.botao {
-    margin: 5 10px;
-    padding: 5px 10px;
-    border-radius: 10%;
-    background-color: var(--preto);
+.button {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 5px;
     color: var(--branco);
     text-decoration: none;
-    justify-content: center;
+    text-align: center;
+    font-weight: bold;
 }
 
-@media(min-width: 834px) {
+.button-edit {
+    background-color: var(--rosa-claro);
+}
 
-    body {
-        height: 100vh;
+.button-delete {
+    background-color: var(--rosa-escuro);
+}
+
+.button:hover {
+    opacity: 0.9;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1000px) {
+    .cabecalho {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 25px;
+        align-items: flex-start;
     }
 
+    .cabecalho__toggle {
+        display: block;
+    }
+
+    .cabecalho__icones {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .cabecalho__icones.active {
+        display: flex;
+    }
+
+    .cabecalho__icones a {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
+    .videos__container {
+        padding: 80px 15px 15px 15px;
+    }
+
+    .videos__item {
+        flex: 1 1 calc(50% - 20px);
+        /* Ajuste o tamanho para 25% menos o gap */
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .videos__container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 153px 25px 15px 25px;
+        justify-content: space-between;
+        /* Ajuste o espaçamento entre os itens */
+    }
+}
+
+@media (max-width: 768px) {
+    .cabecalho {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 25px;
+        align-items: flex-start;
+    }
+
+    .cabecalho__toggle {
+        display: block;
+    }
+
+    .cabecalho__icones {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .cabecalho__icones.active {
+        display: flex;
+    }
+
+    .cabecalho__icones a {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
+    .videos__container {
+        padding: 80px 15px 15px 15px;
+    }
+
+    .videos__item {
+        flex: 1 1 calc(40% - 20px);
+        /* Ajuste o tamanho para 25% menos o gap */
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .videos__container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 153px 25px 15px 25px;
+        justify-content: space-between;
+        /* Ajuste o espaçamento entre os itens */
+    }
+}
+
+/* Estilos para dispositivos muito pequenos, como smartphones */
+@media (max-width: 480px) {
+    .pesquisar__input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .pesquisar__botao {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .videos__container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 153px 25px 15px 25px;
+        justify-content: space-between;
+        /* Ajuste o espaçamento entre os itens */
+    }
+
+    .videos__item {
+        flex: 1 1 calc(100% - 20px);
+        /* Ajuste o tamanho para 25% menos o gap */
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+    }
 }

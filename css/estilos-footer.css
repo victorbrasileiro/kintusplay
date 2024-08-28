@@ -1,0 +1,29 @@
+/* Estilos para o footer */
+footer.rodape {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #5e5e5e; /* Cor de fundo do footer */
+    color: #fff; /* Cor do texto */
+    text-align: center;
+    padding: 15px 0; /* Espaçamento interno */
+    border-top: 2px solid #555; /* Bordas superiores */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5); /* Sombra superior para destacar */
+    font-family: 'Roboto', sans-serif;
+}
+
+footer.rodape p {
+    margin: 0; /* Remove margens padrão */
+    font-size: 14px; /* Tamanho do texto */
+    line-height: 1.5;
+}
+
+footer.rodape a {
+    color: #ff9900; /* Cor dos links no footer */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer.rodape a:hover {
+    text-decoration: underline; /* Sublinha o link ao passar o mouse */
+}
